@@ -4,6 +4,41 @@
 \usepackage[catalan]{babel}
 \moderncvtheme{classic}
 
+\colorlet{languagecolor}{red}
+\colorlet{nolanguagecolor}{gray}
+\newcount\languagecount
+\newcommand\languageknowledge[2]
+{%
+	\hbox
+	{%
+		\makebox[4cm][l]{#1}%
+		\languagecount=0
+		\loop\ifnum\languagecount<#2
+			\advance\languagecount1
+			\textcolor{languagecolor}{$\bullet$}%
+		\repeat
+		\loop\ifnum\languagecount<5
+			\advance\languagecount1
+			\textcolor{nolanguagecolor}{$\bullet$}%
+		\repeat
+	}%
+}
+
+%\newcommand\languageknowledge[2]
+%{%
+%	\cventry{#1}{%
+%		\languagecount=0
+%		\loop\ifnum\languagecount<#2
+%			\advance\languagecount1
+%			\textcolor{languagecolor}{$\bullet$}%
+%		\repeat
+%		\loop\ifnum\languagecount<5
+%			\advance\languagecount1
+%			\textcolor{nolanguagecolor}{$\bullet$}%
+%		\repeat
+%	}%
+%}
+
 \firstname{Josep}
 \familyname{Alòs Pascual}
 \address{C\textbackslash La Plana 90}{25600 Balaguer, Lleida (Spain)}
@@ -67,7 +102,7 @@ de problemes, de cara a dedicar-me en un futur a la recerca en aquests camps.
 	{}
 
 \section{Experiència}
-\cventry{Juliol i setembre 2014}
+\cventry{Juliol i setembre 2015}
 	{Becari, colaboració en el procés de matricula per estudiants nous}
 	{Universitat de Lleida}
 	{Lleida}
@@ -84,25 +119,59 @@ de problemes, de cara a dedicar-me en un futur a la recerca en aquests camps.
 	{Universitat de Lleida}
 	{Lleida}
 	{}
-	{}
+	{\begin{itemize}
+		\item Gestió de la pàgina web de la fira mitjançant un CRM
+		\item Atenció als assistents de la fira per proporcionar informació i resoldre dubtes.
+	\end{itemize}}
 \cventry{Setembre 2017--Desembre 2018}
 	{Enginyer informàtic}
 	{Invelon Technologies}
 	{Lleida}
 	{}
-	{}
+	{\begin{itemize}
+		\item Desenvolupament d'un dispositiu IOT per gestionar impressores 3D
+			mitjançant communicació \textit{serial} (tecnologies utilitzades: Python).
+		\item Desenvolupament del \textit{backend} per connectar la pàgina web
+			de l'eina amb el dispositiu IOT (tecnologies utilitzades: Python, Django).
+	\end{itemize}}
 \cventry{Novembre 2018--Actualitat}
 	{Becari, colaboració en projectes d'optimització}
 	{Grup de recerca d'optimització, Universitat de Lleida}
 	{Lleida}
 	{}
-	{}
+	{\begin{itemize}
+		\item Desenvolupament i manteniment d'un servei SaaS per executar i
+			gestionar tasques en un clúster d'alt rendiment (tecnologies
+			utilitzades: Python, Django, Websockets, Bash, Sun Grid Engine,
+			eines de configuració automàtica (AC))
+		\item Experimentació sobre el rendiment de diferents programes de
+			resolució de programació lineal (ILP) mitjançant AC.
+		\item Desenvolupament d'un procés complet d'AC de problemes
+			d'optimització mitjançant ILP per un procés d'una empresa client
+			(tecnologies utilitzades: Python, Bash, \textit{solvers} d'AC i 
+			ILP)
+		\item Desembresenvolupament d'un paquet de programari per optimitzar
+			arbres de decisió (tecnologies utilitzades: Python, Bash,
+			\textit{solvers} de SAT/MaxSAT)
+	\end{itemize}}
 \cventry{Febrer 2020--Juliol 2020}
 	{Professor universitari}
 	{ENTI Escola de Noves Tecnologies Interactives}
 	{Barcelona}
 	{}
 	{Responsable de l'assignatura de Mecànica i d'Informàtica gràfica}
+\cventry{Setembre 2020--Gener 2021}
+	{Professor universitari}
+	{Universitat de Lleida}
+	{Lleida}
+	{}
+	{Professor adscrit de l'assignatura Intel·ligència Artificial}
+\cventry{Febrer 2021--Juliol 2021}
+	{Professor universitari}
+	{ENTI Escola de Noves Tecnologies Interactives}
+	{Barcelona}
+	{}
+	{Responsable de l'assignatura de Mecànica}
 
 \section{Llengues}
 \cvlanguage{Català}
@@ -132,14 +201,37 @@ de problemes, de cara a dedicar-me en un futur a la recerca en aquests camps.
 
 
 \section{Competències informàtiques}
-\cvcomputer{Sistemes operatius}
-		{Linux, Windows}
-	{Eines}
-		{Git, Shell, Ansible, Latex}
-\cvcomputer{Llenguatges de programació}
-		{C, C++, Python, Java, R, bash,}
-	{Tecnologies Web}
-		{HTML, Javascript, PHP, Django, Flask}
+\subsection{Sistemes operatius}
+\languageknowledge{Linux}{5}
+\languageknowledge{Windows}{4}
+
+\subsection{Eines}
+\languageknowledge{Git}{5}
+\languageknowledge{Bash/Shell}{4}
+\languageknowledge{Ansible}{2}
+\languageknowledge{Latex}{3}
+\languageknowledge{Docker}{4}
+\languageknowledge{Docker-compose}{4}
+\languageknowledge{SQL}{4}
+\languageknowledge{Arduino}{3}
+
+\subsection{Llenguatges de programació}
+\languageknowledge{C}{3}
+\languageknowledge{C++}{3}
+\languageknowledge{Python}{5}
+\languageknowledge{Java}{4}
+\languageknowledge{R}{2}
+
+\subsection{Tecnologies web}
+\languageknowledge{HTML}{5}
+\languageknowledge{CSS}{2}
+\languageknowledge{PHP}{3}
+\languageknowledge{Javascript}{3}
+\languageknowledge{Django}{5}
+\languageknowledge{Flask}{3}
+\languageknowledge{Node}{2}
+\languageknowledge{React}{2}
+\languageknowledge{Express}{2}
 
 \section{Altres}
 \cventry{2014}
@@ -166,24 +258,24 @@ de problemes, de cara a dedicar-me en un futur a la recerca en aquests camps.
 	{Universitat de Lleida}
 	{Lleida}
 	{Guanyadors del repte BonÀrea}
-	{}
+	{} % TODO explain the project done
 \cventry{2019}
 	{Participant en la HackUPC}
 	{Facultat d'Informàtica de Barcelona}
 	{Barcelona}
 	{}
-	{}
+	{} % TODO explain the project done
 \cventry{2019}
 	{Participant en la HackEPS}
 	{Universitat de Lleida}
 	{Lleida}
 	{}
-	{}
+	{} % TODO explain the project done
 \cventry{2019}
 	{Premi AETI 2018/19 al millor projecte informàtic de grau}
 	{Universitat de Lleida}
 	{Lleida}
 	{}
-	{}
+	{} % TODO add the project title
 
 \end{document}
